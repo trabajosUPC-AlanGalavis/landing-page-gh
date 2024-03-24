@@ -1,0 +1,16 @@
+---
+import GreenHouseLogo from "./GreenHouseLogo.astro";
+
+interface Props {
+  classNames?: string;
+}
+
+const {classNames = ""} = Astro.props;
+---
+
+<div class:list={[
+  "flex justify-center items-center bg-accent drop-shadow-md rounded-full",
+  classNames
+]}>
+  <GreenHouseLogo class="text-light h-1/2 w-auto" />
+</div>

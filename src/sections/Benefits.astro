@@ -1,0 +1,25 @@
+---
+import type {Language} from "../models/Translatable";
+import {benefitsStrings} from "../data/benefitsStrings";
+import FeatureCard from "../components/benefits/FeatureCard.astro";
+
+interface Props {
+  id: string;
+  language: Language;
+  }
+
+const {id, language} = Astro.props;
+const {title, subtitle, features} = benefitsStrings[language];
+---
+
+<section id={id} class="bg-secondary min-h-screen p-12 pt-32">
+  <div class="bg-light rounded-lg drop-shadow-md w-fit mx-auto p-6">
+    <h2 class="text-5xl text-center text-primary font-bold">{title}</h2>
+    <p class="text-xl text-center text-primary font-medium">{subtitle}</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-xl gap-6 mx-auto mt-6">
+    {
+      features.map(feature => <FeatureCard feature={feature} />)
+    }
+  </div>
+</section>

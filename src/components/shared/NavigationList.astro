@@ -1,0 +1,70 @@
+---
+import {navLinks} from "../../data/navLinks";
+import type {Language} from "../../models/Translatable";
+
+interface Props {
+  language: Language;
+}
+
+const {language} = Astro.props;
+const links = navLinks[language];
+---
+
+<nav class="hidden md:block">
+  <ul class="flex items-center justify-center text-light font-medium gap-6">
+    {
+      links.map((link) =>
+        <li class="hover:text-accent">
+          <a
+            href={link.destination}
+            aria-label={`${language === "es" ? "Ir a" : "Go to"} ${link.label}`}
+          >
+            {link.label}
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</nav>
+
+<div class="md:hidden flex items-center justify-center relative my-auto">
+  <button id="toggle-dropdown-menu-btn" class="md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-light">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+  <nav id="dropdown-menu" class="invisible absolute bg-light top-10 right-0 drop-shadow-md rounded-lg w-40">
+    <ul class="flex flex-col items-center justify-center divide-y-2 text-light font-medium">
+      {
+        links.map((link) =>
+          <li class="text-primary text-left h-full w-full">
+            <a
+              href={link.destination}
+              aria-label={`${language === "es" ? "Ir a" : "Go to"} ${link.label}`}
+              class="block h-full w-full p-4"
+            >
+              {link.label}
+            </a>
+          </li>
+        )
+      }
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const mobileNavToggleBtn = document.getElementById("toggle-dropdown-menu-btn")!;
+  const dropdownMenu = document.getElementById("dropdown-menu")!;
+  let dropdownVisible: boolean = false;
+
+  mobileNavToggleBtn.addEventListener("click", () => {
+    if (dropdownVisible) {
+      dropdownMenu.classList.add("invisible");
+      dropdownMenu.classList.remove("animate-fade");
+    } else {
+      dropdownMenu.classList.remove("invisible");
+      dropdownMenu.classList.add("animate-fade");
+    }
+    dropdownVisible = !dropdownVisible;
+  });
+</script>

@@ -1,0 +1,33 @@
+---
+import {aboutStrings} from "../data/aboutStrings";
+import type {Language} from "../models/Translatable";
+import YoutubeFrameContent from "../components/about/YoutubeFrameContent.astro";
+import TeamMemberCarousel from "../components/about/TeamMemberCarousel.astro";
+
+interface Props {
+  id: string;
+  language: Language;
+}
+
+const {id, language} = Astro.props;
+const {title, project, team, members, carouselTitle} = aboutStrings[language];
+---
+
+<section id={id} class="bg-light min-h-screen p-12 pt-32 space-y-6">
+  <h3 class="text-5xl text-center text-primary font-bold mb-6">{title}</h3>
+
+  <div class="max-w-screen-lg mx-auto space-y-6">
+    <YoutubeFrameContent title={project.title} description={project.description}>
+      <!-- Tried to make this a reusable component, but YT blocks the request idk why -->
+      <iframe class="w-full h-full rounded-2xl drop-shadow-md" src="https://www.youtube-nocookie.com/embed/BMjgyGefraM" title="About the project" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+    </YoutubeFrameContent>
+    <YoutubeFrameContent title={team.title} description={team.description} reverse>
+      <iframe class="w-full h-full rounded-2xl drop-shadow-md" src="https://www.youtube-nocookie.com/embed/GHF8mKq5Sak?si=_YCwc17LuXAC_T7t" title="About the team" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+    </YoutubeFrameContent>
+  </div>
+
+  <div class="max-w-screen-lg mx-auto">
+    <TeamMemberCarousel title={carouselTitle} members={members} />
+  </div>
+
+</section>

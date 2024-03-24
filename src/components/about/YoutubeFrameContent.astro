@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  reverse?: boolean;
+}
+
+const {title, description, reverse} = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="flex flex-col justify-center">
+    <h3 class="text-3xl text-primary font-bold mb-2">{title}</h3>
+    <p>{description}</p>
+  </div>
+  <div class={`aspect-video max-h-96 rounded-2xl drop-shadow-lg ${reverse ? "md:-order-2" : "md:order-2"}`}>
+    <slot />
+  </div>
+</div>

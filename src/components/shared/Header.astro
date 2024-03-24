@@ -1,0 +1,16 @@
+---
+import BrandingLink from "./BrandingLink.astro";
+import NavigationList from "./NavigationList.astro";
+import type {Language} from "../../models/Translatable";
+
+interface Props {
+  language: Language
+}
+
+const {language} = Astro.props;
+---
+
+<header class="fixed flex justify-around items-center bg-primary drop-shadow-md w-full z-30 py-6">
+  <BrandingLink destination="#home" />
+  <NavigationList language={language} />
+</header>

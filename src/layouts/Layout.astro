@@ -1,0 +1,36 @@
+---
+import type {Language} from "../models/Translatable";
+import Header from "../components/shared/Header.astro";
+import Footer from "../components/shared/Footer.astro";
+import {seoStrings} from "../data/seoStrings";
+
+interface Props {
+	title: string;
+	language: Language
+}
+
+const { title, language } = Astro.props;
+const {description, keywords} = seoStrings[language];
+---
+
+<!doctype html>
+<html lang={language} class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Andrés Leiva">
+		<meta name="robots" content="follow">
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="copyright" content="Greenhouse" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="grid grid-rows-[auto_1fr_auto] min-h-screen">
+		<Header language={language} />
+		<slot />
+		<Footer language={language} />
+	</body>
+</html>
+
