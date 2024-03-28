@@ -11,10 +11,10 @@ export const navLinks: Translatable<Array<NavLink>> = {
     { label: "Contact", destination: "/#contact" },
   ],
   es: [
-    { label: "Beneficios", destination: "/#beneficios" },
-    { label: "Planes", destination: "/#planes" },
-    { label: "Preguntas frecuentes", destination: "/#preguntas-frecuentes" },
-    { label: "Acerca de", destination: "/#acerca-de" },
-    { label: "Contacto", destination: "/#contacto" },
+    { label: "Beneficios", destination: "/es/#beneficios" },
+    { label: "Planes", destination: "/es/#planes" },
+    { label: "Preguntas frecuentes", destination: "/es/#preguntas-frecuentes" },
+    { label: "Acerca de", destination: "/es/#acerca-de" },
+    { label: "Contacto", destination: "/es/#contacto" },
   ]
 }
