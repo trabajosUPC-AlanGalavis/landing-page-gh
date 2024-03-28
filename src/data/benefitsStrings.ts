@@ -51,32 +51,32 @@ export const benefitsStrings: Translatable<BenefitData> = {
       {
         title: "Registro de procesos",
         description: "Registra el avance y estado de los procesos.",
-        imageUrl: "writing.webp"
+        imageUrl: "/writing.webp"
       },
       {
         title: "Documentación",
         description: "Almacena toda tu información de manera rápida y segura.",
-        imageUrl: "documentation.webp"
+        imageUrl: "/documentation.webp"
       },
       {
         title: "Supervisión a distancia",
         description: "Recibe información completa sobre el rendimiento de tus procesos.",
-        imageUrl: "remote-monitoring.webp"
+        imageUrl: "/remote-monitoring.webp"
       },
       {
         title: "Análisis de estadísticas",
         description: "Analiza y procesa la información recolectada.",
-        imageUrl: "stats.webp"
+        imageUrl: "/stats.webp"
       },
       {
         title: "Fácil entendimiento",
         description: "Cualquier persona es capaz de entender como funciona nuestra aplicación.",
-        imageUrl: "easy.webp"
+        imageUrl: "/easy.webp"
       },
       {
         title: "Planes flexibles",
         description: "Puedes elegir el plan que mejor se acomode a tus necesidades.",
-        imageUrl: "money.webp"
+        imageUrl: "/money.webp"
       },
     ]
   }
