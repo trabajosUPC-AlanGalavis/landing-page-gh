@@ -1,6 +1,7 @@
 ---
 import {faqStrings} from "../data/faqStrings";
 import type {Language} from "../models/Translatable";
+import QuestionsAccordion from "../components/faq/QuestionsAccordion.astro";
 
 interface Props {
   id: string;
@@ -8,14 +9,14 @@ interface Props {
 }
 
 const {id, language} = Astro.props;
-const {title, subtitle, additionalSupport} = faqStrings[language];
+const {title, subtitle, additionalSupport, questions} = faqStrings[language];
 ---
 
 <section id={id} class="bg-accent min-h-screen p-12 pt-32">
   <h2 class="text-5xl text-center text-primary font-bold">{title}</h2>
   <p class="text-xl text-center text-primary font-medium">{subtitle}</p>
-  <div class="grid grid-cols-1 md:grid-cols-2 max-w-screen-md bg-light w-full gap-6 mx-auto mt-6">
-    <!-- TODO: ADD ACCORDIONS -->
+  <div class="max-w-screen-sm bg-light rounded-xl w-full gap-6 mx-auto my-6">
+    <QuestionsAccordion questions={questions} />
   </div>
   <p class="text-center text-primary">{additionalSupport}</p>
 </section>
