@@ -53,18 +53,20 @@ const links = navLinks[language];
 </div>
 
 <script>
-  const mobileNavToggleBtn = document.getElementById("toggle-dropdown-menu-btn")!;
-  const dropdownMenu = document.getElementById("dropdown-menu")!;
-  let dropdownVisible: boolean = false;
+  const mobileNavToggleBtn: HTMLElement = document.getElementById("toggle-dropdown-menu-btn")!;
+  const dropdownMenu: HTMLElement = document.getElementById("dropdown-menu")!;
 
   mobileNavToggleBtn.addEventListener("click", () => {
-    if (dropdownVisible) {
-      dropdownMenu.classList.add("invisible");
-      dropdownMenu.classList.remove("animate-fade");
-    } else {
-      dropdownMenu.classList.remove("invisible");
-      dropdownMenu.classList.add("animate-fade");
-    }
-    dropdownVisible = !dropdownVisible;
+    dropdownMenu.classList.toggle("invisible");
+    dropdownMenu.classList.toggle("animate-fade");
+  });
+
+  const links: NodeListOf<HTMLAnchorElement> = dropdownMenu.querySelectorAll<HTMLAnchorElement>('a');
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      dropdownMenu.classList.toggle("invisible");
+      dropdownMenu.classList.toggle("animate-fade");
+    });
   });
 </script>
