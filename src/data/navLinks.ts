@@ -14,7 +14,7 @@ export const navLinks: Translatable<Array<NavLink>> = {
     { label: "Beneficios", destination: "/es/#beneficios" },
     { label: "Planes", destination: "/es/#planes" },
     { label: "Preguntas frecuentes", destination: "/es/#preguntas-frecuentes" },
-    { label: "Acerca de", destination: "/es/#acerca-de" },
+    { label: "Acerca de", destination: "/es/#acerca" },
     { label: "Contacto", destination: "/es/#contacto" },
   ]
 }
