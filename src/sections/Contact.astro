@@ -1,6 +1,6 @@
 ---
-import {contactStrings} from "../data/contactStrings";
-import type {Language} from "../models/Translatable";
+import { contactStrings } from "../data/contactStrings";
+import type { Language } from "../models/Translatable";
 import ContactForm from "../components/contact/ContactForm.astro";
 
 interface Props {
@@ -8,12 +8,17 @@ interface Props {
   language: Language;
 }
 
-const {id, language} = Astro.props;
-const {formTitle, description, name, email, message, submitBtn} = contactStrings[language];
+const { id, language } = Astro.props;
+const { formTitle, description, name, email, message, submitBtn } =
+  contactStrings[language];
 ---
 
 <section id={id} class="grid grid-cols-1 md:grid-cols-2 bg-accent">
-  <div class="hidden md:block bg-cover bg-center" style="background-image: url('/farm.webp')" />
+  <div
+    class="hidden md:block bg-cover bg-center"
+    style="background-image: url('/farm.webp')"
+  >
+  </div>
   <div class="p-8">
     <ContactForm
       title={formTitle}

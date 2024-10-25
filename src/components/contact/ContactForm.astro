@@ -1,5 +1,5 @@
 ---
-import type {FormData} from "../../models/FormData";
+import type { FormData } from "../../models/FormData";
 
 interface Props {
   title: string;
@@ -10,25 +10,53 @@ interface Props {
   submitBtn: string;
 }
 
-const {title, description, name, email, message, submitBtn} = Astro.props;
+const { title, description, name, email, message, submitBtn } = Astro.props;
 ---
 
 <form id="contact-form" class="max-w-96 mx-auto">
-  <h2 class="text-primary font-bold text-center text-3xl">{title}</h2>
-  <p class="text-center text-primary">{description}</p>
+  <h2 class="text-secondary font-bold text-center text-3xl">{title}</h2>
+  <p class="text-center text-secondary">{description}</p>
   <div class="mb-5">
-    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">{name.label}</label>
-    <input type="text" id="name" autocomplete="off" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder={name.placeholder} required />
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900"
+      >{name.label}</label
+    >
+    <input
+      type="text"
+      id="name"
+      autocomplete="off"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder={name.placeholder}
+      required
+    />
   </div>
   <div class="mb-5">
-    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">{email.label}</label>
-    <input type="email" id="email" autocomplete="off" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder={email.placeholder} required />
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900"
+      >{email.label}</label
+    >
+    <input
+      type="email"
+      id="email"
+      autocomplete="off"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder={email.placeholder}
+      required
+    />
   </div>
   <div class="mb-5">
-    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">{message.label}</label>
-    <textarea id="message" rows="4" autocomplete="off" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder={message.placeholder} />
+    <label for="message" class="block mb-2 text-sm font-medium text-gray-900"
+      >{message.label}</label
+    >
+    <textarea
+      id="message"
+      rows="4"
+      autocomplete="off"
+      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+      placeholder={message.placeholder}></textarea>
   </div>
-  <button type="submit" class="bg-primary hover:bg-opacity-85 py-2 text-center text-accent font-semibold rounded-lg drop-shadow-md w-full">
+  <button
+    type="submit"
+    class="bg-primary hover:bg-opacity-85 py-2 text-center text-light font-semibold rounded-lg drop-shadow-md w-full"
+  >
     {submitBtn}
   </button>
 </form>
@@ -47,5 +75,5 @@ const {title, description, name, email, message, submitBtn} = Astro.props;
     emailInput.value = "";
     // @ts-ignore
     messageInput.value = "";
-  })
+  });
 </script>
