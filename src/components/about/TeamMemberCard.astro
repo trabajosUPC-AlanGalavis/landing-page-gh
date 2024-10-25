@@ -1,5 +1,5 @@
 ---
-import type {TeamMember} from "../../models/TeamMember";
+import type { TeamMember } from "../../models/TeamMember";
 import LinkedInLogo from "../../assets/LinkedInLogo.astro";
 import GithubLogo from "../../assets/GithubLogo.astro";
 interface Props {
@@ -7,14 +7,22 @@ interface Props {
   accent?: boolean;
 }
 
-const {teamMember, accent} = Astro.props;
+const { teamMember, accent } = Astro.props;
 const cardTheme = accent
-  ? { bg: "bg-accent", txt: { primary: "text-primary", secondary: "text-slate-950"} }
-  : { bg: "bg-primary", txt: { primary: "text-accent", secondary: "text-light"} };
+  ? {
+      bg: "bg-accent",
+      txt: { primary: "text-secondary", secondary: "text-secondary" },
+    }
+  : {
+      bg: "bg-primary",
+      txt: { primary: "text-light", secondary: "text-light" },
+    };
 ---
 
 <div class={`${cardTheme.bg} w-full drop-shadow-md rounded-2xl p-6`}>
-  <div class={`flex justify-between items-center ${cardTheme.txt.primary} mb-2`}>
+  <div
+    class={`flex justify-between items-center ${cardTheme.txt.primary} mb-2`}
+  >
     <h4 class="text-xl font-semibold">{teamMember.name}</h4>
     <div class="flex justify-center items-center gap-2">
       <a

@@ -5,10 +5,13 @@ interface Props {
   destination: string;
 }
 
-const {destination} = Astro.props;
+const { destination } = Astro.props;
 ---
 
-<a href={destination} class="flex justify-center items-center hover:scale-95 duration-300 gap-2">
-  <GreenHouseLogo class="text-[#15F5BA] h-11 w-11" />
+<a
+  href={destination}
+  class="flex justify-center items-center hover:scale-95 duration-300 gap-2"
+>
+  <GreenHouseLogo class="text-light h-11 w-11" />
   <h1 class="text-3xl font-bold text-light">Greenhouse</h1>
 </a>
