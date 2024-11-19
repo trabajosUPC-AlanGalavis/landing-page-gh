@@ -14,18 +14,18 @@ export const pricingStrings: Translatable<PricingData> = {
     plans: [
       {
         title: "Basic",
-        monthlyPrice: "12.90",
-        features: ["Register up to 5 employees.", "Record up to 30 monthly harvestings."]
+        monthlyPrice: "0",
+        features: ["Register up to 5 employees.", "Record up to 365 monthly crops."]
       },
       {
         title: "Regular",
-        monthlyPrice: "32.90",
-        features: ["Register up to 30 employees.", "Record up to 60 monthly harvestings."]
+        monthlyPrice: "10",
+        features: ["Register up to 15.", "Record up to unlimited crops."]
       },
       {
         title: "Premium",
-        monthlyPrice: "64.90",
-        features: ["Register unlimited employees.", "Record unlimited harvestings."]
+        monthlyPrice: "20",
+        features: ["Register unlimited employees.", "Record unlimited crops."]
       }
     ]
   },
