@@ -20,7 +20,7 @@ export const pricingStrings: Translatable<PricingData> = {
       {
         title: "Regular",
         monthlyPrice: "10",
-        features: ["Register up to 15.", "Record up to unlimited crops."]
+        features: ["Register up to 15 employees.", "Record up to unlimited crops."]
       },
       {
         title: "Premium",
